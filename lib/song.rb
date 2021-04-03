@@ -27,8 +27,9 @@ class Song
   def self.create_by_name(name)
     song = self.new_by_name(name)
     
-    if Song
-    @@all << song
+    if !Song.all.include?(song)
+      @@all << song
+    end
     
     song
   end
