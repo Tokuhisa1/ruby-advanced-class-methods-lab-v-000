@@ -63,5 +63,12 @@ class Song
   end
   
   def self.create_from_filename(filename)
+    song = self.new_from_filename(filename)
+    
+    if !self.all.include?(song)
+      @@all << song
+    end
+    
+    song
   end
 end
